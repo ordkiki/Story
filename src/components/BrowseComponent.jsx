@@ -8,7 +8,7 @@ export function Listen() {
     <div className='listen my-10'>
       <div className='flex flex-col md:flex-row justify-between items-center'>
         <h3 className='font-medium text-2xl'>Listen</h3>
-        <Link to="/more" className='flex items-center mt-2 md:mt-0'>
+        <Link to="/ListenMore" className='flex items-center mt-2 md:mt-0'>
           Voir plus <FaAngleRight className='ml-1' />
         </Link>
       </div>
