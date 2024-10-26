@@ -9,6 +9,7 @@ import Favoris from './views/Favoris'
 import Collection from './views/Collection'
 import ReadMore from './views/ReadMore'
 import ListenMore from './views/ListenMore'
+import Profile from './views/Profile'
 function App() {
  
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route index path='/Collection' element={<Collection/>}/>
         <Route index path='/ReadMore' element={<ReadMore/>}/>
         <Route index path='/ListenMore' element={<ListenMore/>}/>
+        <Route index path='/Profile' element={<Profile/>}/>
 
       </Routes>
     </BrowserRouter>)

@@ -1,5 +1,5 @@
-import React from 'react'
-import {FaBookmark} from "react-icons/fa"
+
+
 import images from "../assets/image/LOGO.png"
 function List(props) {
   return (

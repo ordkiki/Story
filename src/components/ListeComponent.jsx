@@ -1,4 +1,4 @@
-import React from 'react'
+
 import List from './listModel.jsx'
 import images from "../assets/image/LOGO.png"
 function ListComponent() {
