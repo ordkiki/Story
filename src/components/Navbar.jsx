@@ -94,7 +94,7 @@ function Navbar() {
 
 export function Sidebar({ ToogleClick }) {
   return (
-    <div className='absolute top-0 left-0 w-[11vw] bg-white h-[100vh] border p-4'>
+    <div className='z-10 absolute top-0 left-0 w-[11vw] bg-white h-[100vh] border p-4'>
       <div className='flex w-[10vw] p-4'>
         <a href="https://flowbite.com/" className="flex items-center space-x-3 w-[13vw] rtl:space-x-reverse">
           <FaBook className=''></FaBook>

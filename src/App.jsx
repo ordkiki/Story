@@ -7,6 +7,8 @@ import Manage from './views/Manage'
 import Browse from './views/Browse'
 import Favoris from './views/Favoris'
 import Collection from './views/Collection'
+import ReadMore from './views/ReadMore'
+import ListenMore from './views/ListenMore'
 function App() {
  
   return (
@@ -17,6 +19,9 @@ function App() {
         <Route index path='/Browse' element={<Browse/>}/>
         <Route index path='/Favoris' element={<Favoris/>}/>
         <Route index path='/Collection' element={<Collection/>}/>
+        <Route index path='/ReadMore' element={<ReadMore/>}/>
+        <Route index path='/ListenMore' element={<ListenMore/>}/>
+
       </Routes>
     </BrowserRouter>)
 }
