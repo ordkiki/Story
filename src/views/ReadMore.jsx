@@ -2,8 +2,12 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import { CardRead } from '../components/CardComponent'
 import PathBrowse from '../components/PathBrowse'
-import SelectOption from '../components/ReadMoreComponent'
+import axios from 'axios'
+// import SelectOption from '../components/ReadMoreComponent'
+import { Read } from '../components/BrowseComponent'
+
 export default function ReadMore() {
+  
   return (
     <div>
         <Navbar></Navbar>
@@ -24,15 +28,15 @@ export default function ReadMore() {
             </div>
           </div>
 
-          <div>
-            <SelectOption>
-            </SelectOption>
-          </div>
+          
 
 
         </div>
 
+        <div className='flex mx-40 p-4 w-[85vw]'>
 
+          
+        </div>
         <div className='flex mx-40 p-4 w-[85vw]'>
           <CardRead title="Angatra" description="tantara mapatahoatra" />
           <CardRead title="Angatra" description="tantara mapatahoatra" />
