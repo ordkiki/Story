@@ -1,8 +1,11 @@
-import React from 'react'
-
+import Navbar from '../components/Navbar'
+import ListComponent from '../components/ListeComponent.jsx'
 function Collection() {
   return (
-    <div>Collection</div>
+    <div>
+      <Navbar></Navbar>
+      <ListComponent/>
+    </div>
   )
 }
 
