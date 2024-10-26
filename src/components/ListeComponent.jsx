@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import List from './listModel.jsx'
 import images from "../assets/image/LOGO.png"
+import { PopUp } from './CreationStoryComponent.jsx'
 function ListComponent() {
     const [afficheRead,setAfficheRead] = useState(true)
     const [afficheListen,setAfficheListen] = useState(false)
+    const [Creer, SetCreer] = useState(false)
+
     function ListeRead(){
         setAfficheRead(true)
         setAfficheListen(false)
@@ -14,19 +17,33 @@ function ListComponent() {
         setAfficheRead(false)
         setAfficheListen(true)
     }
+    function CreerHistory(){
+        SetCreer(true)
+    }
+
     return (
     <div>
         <div className='p-4 mx-36 flex items-center justify-between'>
             <h1 className='font-bold text-3xl'>My contents</h1>
             <div className='read'>
                 <button 
-                    
+                    onClick={CreerHistory}
                     className='font-bold bg-black px-[1.7vw] py-[0.5vw] text-white hover:bg-slate-800 rounded-[10px]'>
                         Create Story
                 </button>
             </div>
         </div>
-        
+        {
+        Creer &&
+            <PopUp></PopUp>
+        }
+
+
+
+
+
+
+
         <div className='p-4 mx-36 flex items-center'>
             <button
                 onClick={ListeRead} 
