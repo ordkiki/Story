@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { FaBars, FaUser, FaTimes, FaBell } from 'react-icons/fa';
+import { FaBars, FaUser, FaTimes, FaBell,FaHome , FaLayerGroup,FaTasks  } from 'react-icons/fa';
 import { FaBook } from 'react-icons/fa'; // Importer l'icône de livre
+import {Link} from "react-router-dom"
 
 function Navbar() {
   const [ouvrir, Setouvrir] = useState(false); // État pour ouvrir/fermer la sidebar
@@ -108,13 +109,13 @@ export function Sidebar({ ToogleClick }) {
 
       <ul className='p-4'>
         <li className='hover:bg-black hover:text-white transition-all placeholder w-[7vw] p-2'>
-          Browse
+          <Link to="/Browse" className='flex items-center justify-between'><FaHome></FaHome> Browse</Link>
         </li>
         <li className='hover:bg-black hover:text-white transition-all placeholder w-[7vw] p-2'>
-          Collection
+        <Link className='flex items-center justify-between' to="/Collection"><FaLayerGroup></FaLayerGroup> Collection</Link>
         </li>
         <li className='hover:bg-black hover:text-white transition-all placeholder w-[7vw] p-2'>
-          Manage
+        <Link className='flex items-center justify-between' to="/Manage"><FaTasks></FaTasks> Manage</Link>
         </li>
       </ul>
     </div>
