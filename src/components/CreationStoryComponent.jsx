@@ -5,15 +5,18 @@ import { Link } from 'react-router-dom';
 export function PopUp({ onClose }) {
     const [Lire, setLire] = useState(false);
     const [likeAudio, setLikeAudio] = useState(false);
-
+    const [routerPath, setRouterPath] = useState("");
     function ChoisirAudio() {
         setLikeAudio(true);
+        setRouterPath("Create_Listen");
+        path
         setLire(false);
     }
 
     function ChoisirLire() {
         setLire(true);
         setLikeAudio(false);
+        setRouterPath("Create_Read");
     }
 
     return (
@@ -54,7 +57,7 @@ export function PopUp({ onClose }) {
 
                     <div className='my-10 flex items-center justify-center'>
                         <button className='hover:bg-black px-10 rounded-[20px] hover:text-white transition-all text-center p-2 border-[3px] border-black'>
-                            <Link to="/Creer" className='items-center flex'>
+                            <Link to={`/Collection/${routerPath}`} className='items-center flex'>
                                 Next <FaAngleRight />
                             </Link>
                         </button>

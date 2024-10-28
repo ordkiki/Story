@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { FaBars, FaUser, FaTimes, FaBell,FaHome , FaLayerGroup,FaTasks  } from 'react-icons/fa';
-import { FaBook } from 'react-icons/fa'; // Importer l'icône de livre
+import { FaBook } from 'react-icons/fa'; 
 import {Link} from "react-router-dom"
 
 function Navbar() {
-  const [ouvrir, Setouvrir] = useState(false); // État pour ouvrir/fermer la sidebar
+  const [ouvrir, Setouvrir] = useState(false); 
 
+  
   const ToogleClick = () => {
     Setouvrir(!ouvrir);
   };

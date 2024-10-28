@@ -10,6 +10,8 @@ import Collection from './views/Collection'
 import ReadMore from './views/ReadMore'
 import ListenMore from './views/ListenMore'
 import Profile from './views/Profile'
+import CreateRead from './views/CreateRead'
+import CreateListen from './views/CreateListen'
 function App() {
  
   return (
@@ -23,7 +25,8 @@ function App() {
         <Route index path='/ReadMore' element={<ReadMore/>}/>
         <Route index path='/ListenMore' element={<ListenMore/>}/>
         <Route index path='/Profile' element={<Profile/>}/>
-
+        <Route index path='/Collection/Create_Read' element={<CreateRead/>}/>
+        <Route index path='/Collection/Create_Listen' element={<CreateListen/>}/>
       </Routes>
     </BrowserRouter>)
 }
