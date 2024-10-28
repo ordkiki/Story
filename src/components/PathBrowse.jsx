@@ -13,4 +13,16 @@ function PathBrowse(props) {
   )
 }
 
+function PathCollection(props) {
+  return (
+    <div className='mx-40 m-5'>
+        <h1 className='flex items-center text-xl'>
+            <Link to="/Collection" className='transition-all hover:scale-[1.1]'>Collection</Link> 
+            <FaAngleRight/> 
+            {props.path}
+        </h1>
+    </div>
+  )
+}
+
 export default PathBrowse
