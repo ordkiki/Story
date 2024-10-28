@@ -3,7 +3,7 @@ import {FaUser, FaClock, FaThumbtack } from 'react-icons/fa'
 function ReadUser(props) {
   return (
     <div>
-         <div className=" mx-36 mt-[2vh] flex items-center justify-between ">
+         <div className=" mx-40 mt-[2vh] flex items-center justify-between ">
             <div>
                 <h1 className='font-bold text-2xl'>{props.titre}</h1>
                 <h1>{props.genre}</h1>
