@@ -17,7 +17,7 @@ function Navbar() {
         <div className='flex w-[10vw] p-4'>
           <a href="https://flowbite.com/" className="flex items-center space-x-3 w-[13vw] rtl:space-x-reverse">
             <FaBook className=''></FaBook>
-            <span className="self-center text-2xl font-semibold whitespace-nowrap ">
+            <span className="self-center text-xl font-semibold whitespace-nowrap ">
               Stories
             </span>
           </a>
@@ -100,7 +100,7 @@ export function Sidebar({ ToogleClick }) {
       <div className='flex w-[10vw] p-4'>
         <a href="https://flowbite.com/" className="flex items-center space-x-3 w-[13vw] rtl:space-x-reverse">
           <FaBook className=''></FaBook>
-          <span className="self-center text-2xl font-semibold whitespace-nowrap ">
+          <span className="self-center text-xl font-semibold whitespace-nowrap ">
             Stories
           </span>
         </a>

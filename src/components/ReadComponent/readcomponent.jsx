@@ -12,7 +12,7 @@ function Readcomponent() {
     <div>
       {/* Passez le titre récupéré à PathRead */}
       <PathRead path={title} />
-      <div className="mx-36 h-[23vh] rounded-[10px] flex items-center justify-center bg-slate-100">
+      <div className="mx-40 h-[23vh] rounded-[10px] flex items-center justify-center bg-slate-100">
         {/* Affichez d'autres éléments ou le contenu que vous souhaitez ici */}
       </div>
       <ReadUser
