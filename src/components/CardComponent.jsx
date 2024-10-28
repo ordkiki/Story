@@ -3,14 +3,11 @@ import { FaBookmark } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
 export function CardRead(props) {
-  const navigate = useNavigate(); // Créez une instance de navigate
-
+  const navigate = useNavigate(); 
   function changerPage(event) {
-    event.preventDefault(); // Empêche le comportement par défaut du bouton
+    event.preventDefault(); 
     const chemin = `/ReadMore/Read/${encodeURIComponent(props.title)}`; 
     console.log(`Page changée dans le composant parent pour le titre: ${props.title}`);
-    
-    // Utilisez navigate pour changer de page tout en passant les données en state
     navigate(chemin, { state: { title: props.title, description: props.description } });
   }
 

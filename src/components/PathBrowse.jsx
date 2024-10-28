@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaAngleRight } from 'react-icons/fa'; // Importer l'icône pour "voir plus"
+import { FaAngleRight } from 'react-icons/fa';
 import { Link, useLocation } from 'react-router-dom';
 
 
@@ -30,8 +30,8 @@ export function PathCollection(props) {
 
 
 export function PathRead() {
-  const location = useLocation(); // Accéder à l'objet location
-  const { title } = location.state || {}; // Extraire uniquement le titre
+  const location = useLocation(); 
+  const { title } = location.state || {};
 
   return (
     <div className='mx-40 m-5'>
@@ -40,7 +40,7 @@ export function PathRead() {
             <FaAngleRight/> 
             <Link to="/ReadMore" className='transition-all hover:scale-[1.1]'>Read</Link> 
             <FaAngleRight/> 
-            {title || "Titre non disponible"} {/* Affiche le titre ou un message par défaut */}
+            {title || "Titre non disponible"} 
         </h1>
     </div>
   )
