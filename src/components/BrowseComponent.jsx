@@ -1,3 +1,5 @@
+// Composant Parent - Read
+
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { CardRead, CardListen } from './CardComponent';
@@ -8,13 +10,11 @@ export function Listen() {
   const [data, setData] = useState([]);
   const [donneesFiltres, setDonneesFiltres] = useState([]);
   
-
   const fetchData = async () => {
-    const url = import.meta.env.VITE_API_URL + "/Read"
+    const url = import.meta.env.VITE_API_URL + "/Read";
     try {
       const response = await axios.get(url);
       if (response.data.status === "success") {
-        console.log("Résultats:", response.data.results[0]);
         setData(response.data.results[0]);
       }
     } catch (error) {
@@ -38,9 +38,9 @@ export function Listen() {
           Voir plus <FaAngleRight className='ml-1' />
         </Link>
       </div>
-      <div className='flex flex-wrap justify-between p-4 card-vakiana'>
+      <div className='p-4 card-vakiana flex flex-wrap justify-between'>
         {donneesFiltres.length > 0 ? (
-          donneesFiltres.map((donne) => (
+          donneesFiltres.slice(0, 4).map((donne) => (
             <CardListen key={donne.id_histories} title={donne.title || "Titre non disponible"} description={donne.content || "Description non disponible"} />
           ))
         ) : (
@@ -55,12 +55,13 @@ export function Read() {
   const [data, setData] = useState([]);
   const [donneesFiltres, setDonneesFiltres] = useState([]);
 
+  // Fonction changerPage déclarée dans le composant parent
+
   const fetchData = async () => {
-    const url = import.meta.env.VITE_API_URL + "/Read"
+    const url = import.meta.env.VITE_API_URL + "/Read";
     try {
       const response = await axios.get(url);
       if (response.data.status === "success") {
-        console.log("Résultats:", response.data.results[0]);
         setData(response.data.results[0]);
       }
     } catch (error) {
@@ -84,10 +85,11 @@ export function Read() {
           Voir plus <FaAngleRight className='ml-1' />
         </Link>
       </div>
-      <div className='flex flex-wrap p-2 card-vakiana'>
+
+      <div className='p-2 card-vakiana flex flex-wrap justify-between'>
         {donneesFiltres.length > 0 ? (
-          donneesFiltres.map((donne) => (
-            <CardRead key={donne.id_histories} title={donne.title || "Titre non disponible"} description={donne.content || "Description non disponible"} />
+          donneesFiltres.slice(0, 4).map((donne) => (
+            <CardRead key={donne.id_histories} changerPage={changerPage} title={donne.title || "Titre non disponible"} description={donne.content || "Description non disponible"} />
           ))
         ) : (
           <p>Aucune donnée à afficher.</p>

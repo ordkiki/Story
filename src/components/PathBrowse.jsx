@@ -1,6 +1,8 @@
-import React from 'react'
-import { FaAngleRight } from 'react-icons/fa'; // Importer l'icône pour "voir plus"
-import {Link} from "react-router-dom"
+import React from 'react';
+import { FaAngleRight } from 'react-icons/fa';
+import { Link, useLocation } from 'react-router-dom';
+
+
 function PathBrowse(props) {
   return (
     <div className='mx-40 m-5'>
@@ -26,7 +28,11 @@ export function PathCollection(props) {
   )
 }
 
-export function PathRead(props) {
+
+export function PathRead() {
+  const location = useLocation(); 
+  const { title } = location.state || {};
+
   return (
     <div className='mx-40 m-5'>
         <h1 className='flex items-center text-xl'>
@@ -34,7 +40,7 @@ export function PathRead(props) {
             <FaAngleRight/> 
             <Link to="/ReadMore" className='transition-all hover:scale-[1.1]'>Read</Link> 
             <FaAngleRight/> 
-            {props.path}
+            {title || "Titre non disponible"} 
         </h1>
     </div>
   )

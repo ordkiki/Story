@@ -61,6 +61,32 @@ export default function ReadMore() {
           <p>Aucune donnée à afficher.</p>
         )}
       </div>
+      <div className='flex mx-40 p-4 w-[85vw]'>
+        <CardRead title="Angatra" description="tantara mapatahoatra" />
+        <CardRead title="Matsanika" description="tantara mapatahoatra" />
+        <CardRead title="Angatra" description="tantara mapatahoatra" />
+        <CardRead title="Angatra" description="tantara mapatahoatra" />
+      </div>
+      <div className='flex mx-40 p-4 w-[85vw]'>
+        <CardRead title="Angatra" description="tantara mapatahoatra" />
+        <CardRead title="Angatra" description="tantara mapatahoatra" />
+        <CardRead title="Angatra" description="tantara mapatahoatra" />
+        <CardRead title="Angatra" description="tantara mapatahoatra" />
+      </div>
+      <div className='flex mx-40 p-4 w-[85vw]'>
+        <CardRead title="Angatra" description="tantara mapatahoatra" />
+        <CardRead title="Angatra" description="tantara mapatahoatra" />
+        <CardRead title="Angatra" description="tantara mapatahoatra" />
+        <CardRead title="Angatra" description="tantara mapatahoatra" />
+      </div>
+      <div className='flex  wrap mx-40 p-4 w-[85vw]'>
+        <CardRead title="Angatra" description="tantara mapatahoatra" />
+        <CardRead title="Angatra" description="tantara mapatahoatra" />
+        <CardRead title="Angatra" description="tantara mapatahoatra" />
+        <CardRead title="Angatra" description="tantara mapatahoatra" />
+      </div>
+
+
     </div>
   )
 }

@@ -18,6 +18,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/ReadMore/Read/:title" element={<Read/>} />
         <Route index path='/' element={<Browse></Browse>}/>
         <Route index path='/Manage' element={<Manage/>}/>
         <Route index path='/Browse' element={<Browse/>}/>
@@ -26,7 +27,6 @@ function App() {
         <Route index path='/ReadMore' element={<ReadMore/>}/>
         <Route index path='/ListenMore' element={<ListenMore/>}/>
         <Route index path='/Profile' element={<Profile/>}/>
-        <Route index path='/ReadMore/Read' element={<Read/>}/>
         <Route index path='/Collection/Create_Read' element={<CreateRead/>}/>
         <Route index path='/Collection/Create_Listen' element={<CreateListen/>}/>
       </Routes>
