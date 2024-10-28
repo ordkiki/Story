@@ -84,7 +84,7 @@ export function Read() {
           Voir plus <FaAngleRight className='ml-1' />
         </Link>
       </div>
-      <div className='flex flex-wrap justify-between p-2 card-vakiana'>
+      <div className='flex flex-wrap p-2 card-vakiana'>
         {donneesFiltres.length > 0 ? (
           donneesFiltres.map((donne) => (
             <CardRead key={donne.id_histories} title={donne.title || "Titre non disponible"} description={donne.content || "Description non disponible"} />
