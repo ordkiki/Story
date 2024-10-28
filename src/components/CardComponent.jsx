@@ -12,8 +12,9 @@ export function CardRead(props) {
   }
 
   return (
-    <div className='h-auto w-full md:w-[30%] lg:w-[22%] mx-2 my-4'>
+    <div className='h-auto w-full md:w-[30%] lg:w-[22%] m-4'>
       <div className='relative rounded-xl bg-gray-200 shadow-md p-4 flex flex-col justify-between h-[25vh]'>
+
         <FaBookmark className="m-1 text-xl absolute top-0 right-0" />
       </div>
       <h3 className='font-semibold text-lg'>{props.title}</h3>

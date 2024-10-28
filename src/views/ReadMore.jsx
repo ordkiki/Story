@@ -50,13 +50,9 @@ export default function ReadMore() {
 
           </div>
         </div>
-
-
-
-
       </div>
 
-      <div className='flex mx-40 p-4 w-[85vw]'>
+      <div className='flex flex-wrap mx-40 p-4 w-[85vw]'>
         {donneesFiltres.length > 0 ? (
           donneesFiltres.map((donne) => (
             <CardRead key={donne.id_histories} title={donne.title || "Titre non disponible"} description={donne.content || "Description non disponible"} />
@@ -89,6 +85,7 @@ export default function ReadMore() {
         <CardRead title="Angatra" description="tantara mapatahoatra" />
         <CardRead title="Angatra" description="tantara mapatahoatra" />
       </div>
+
 
     </div>
   )
