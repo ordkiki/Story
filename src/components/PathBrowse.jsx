@@ -13,7 +13,8 @@ function PathBrowse(props) {
   )
 }
 
-function PathCollection(props) {
+
+export function PathCollection(props) {
   return (
     <div className='mx-40 m-5'>
         <h1 className='flex items-center text-xl'>
