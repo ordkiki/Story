@@ -7,10 +7,12 @@ import axios from "axios";
 export function Listen() {
   const [data, setData] = useState([]);
   const [donneesFiltres, setDonneesFiltres] = useState([]);
+  
 
   const fetchData = async () => {
+    const url = import.meta.env.VITE_API_URL + "/Read"
     try {
-      const response = await axios.get("http://127.0.0.1:8001/Histories/Read");
+      const response = await axios.get(url);
       if (response.data.status === "success") {
         console.log("Résultats:", response.data.results[0]);
         setData(response.data.results[0]);
@@ -36,6 +38,7 @@ export function Listen() {
           Voir plus <FaAngleRight className='ml-1' />
         </Link>
       </div>
+      tsy haiko we tonga de izy rehetra ve ny eto sa atao 4 ihany
       <div className='p-4 card-vakiana flex flex-wrap justify-between'>
         {donneesFiltres.length > 0 ? (
           donneesFiltres.map((donne) => (
@@ -54,8 +57,9 @@ export function Read() {
   const [donneesFiltres, setDonneesFiltres] = useState([]);
 
   const fetchData = async () => {
+    const url = import.meta.env.VITE_API_URL + "/Read"
     try {
-      const response = await axios.get("http://127.0.0.1:8001/Histories/Read");
+      const response = await axios.get(url);
       if (response.data.status === "success") {
         console.log("Résultats:", response.data.results[0]);
         setData(response.data.results[0]);
@@ -81,6 +85,7 @@ export function Read() {
           Voir plus <FaAngleRight className='ml-1' />
         </Link>
       </div>
+      tsy haiko we tonga de izy rehetra ve ny eto sa atao 4 ihany
       <div className='p-2 card-vakiana flex flex-wrap justify-between'>
         {donneesFiltres.length > 0 ? (
           donneesFiltres.map((donne) => (
