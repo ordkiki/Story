@@ -1,9 +1,9 @@
 import React from 'react'
-import createReadComponent from '../components/CreationStoryComponent/createReadComponent'
+import CreateReadComponent from '../components/CreationStoryComponent/createReadComponent'
 function CreateRead() {
   return (
     <div>
-        <createReadComponent/>
+        <CreateReadComponent/>
         <h3>CreateRead</h3>
     </div>
   )
