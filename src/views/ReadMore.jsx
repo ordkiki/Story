@@ -67,7 +67,7 @@ export default function ReadMore() {
       </div>
       <div className='flex mx-40 p-4 w-[85vw]'>
         <CardRead title="Angatra" description="tantara mapatahoatra" />
-        <CardRead title="Angatra" description="tantara mapatahoatra" />
+        <CardRead title="Matsanika" description="tantara mapatahoatra" />
         <CardRead title="Angatra" description="tantara mapatahoatra" />
         <CardRead title="Angatra" description="tantara mapatahoatra" />
       </div>
