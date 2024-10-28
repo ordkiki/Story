@@ -31,15 +31,14 @@ export function Listen() {
   }, [data]); 
 
   return (
-    <div className='listen my-10'>
-      <div className='flex flex-col md:flex-row justify-between items-center'>
-        <h3 className='font-medium text-2xl'>Listen</h3>
+    <div className='my-10 listen'>
+      <div className='flex flex-col items-center justify-between md:flex-row'>
+        <h3 className='text-2xl font-medium'>Listen</h3>
         <Link to="/ListenMore" className='flex items-center mt-2 md:mt-0'>
           Voir plus <FaAngleRight className='ml-1' />
         </Link>
       </div>
-      tsy haiko we tonga de izy rehetra ve ny eto sa atao 4 ihany
-      <div className='p-4 card-vakiana flex flex-wrap justify-between'>
+      <div className='flex flex-wrap justify-between p-4 card-vakiana'>
         {donneesFiltres.length > 0 ? (
           donneesFiltres.map((donne) => (
             <CardListen key={donne.id_histories} title={donne.title || "Titre non disponible"} description={donne.content || "Description non disponible"} />
@@ -78,15 +77,14 @@ export function Read() {
   }, [data]);
 
   return (
-    <div className='read my-5'>
-      <div className='flex flex-col md:flex-row justify-between items-center mb-4'>
-        <h3 className='font-medium text-xl md:text-2xl'>Read</h3>
-        <Link to="/ReadMore" className='flex items-center mt-2 md:mt-0 text-sm md:text-base'>
+    <div className='my-5 read'>
+      <div className='flex flex-col items-center justify-between mb-4 md:flex-row'>
+        <h3 className='text-xl font-medium md:text-2xl'>Read</h3>
+        <Link to="/ReadMore" className='flex items-center mt-2 text-sm md:mt-0 md:text-base'>
           Voir plus <FaAngleRight className='ml-1' />
         </Link>
       </div>
-      tsy haiko we tonga de izy rehetra ve ny eto sa atao 4 ihany
-      <div className='p-2 card-vakiana flex flex-wrap justify-between'>
+      <div className='flex flex-wrap justify-between p-2 card-vakiana'>
         {donneesFiltres.length > 0 ? (
           donneesFiltres.map((donne) => (
             <CardRead key={donne.id_histories} title={donne.title || "Titre non disponible"} description={donne.content || "Description non disponible"} />
