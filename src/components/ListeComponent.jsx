@@ -3,6 +3,7 @@ import List from './listModel.jsx';
 import images from "../assets/image/LOGO.png";
 import axios from "axios";
 import { PopUp } from './CreationStoryComponent.jsx';
+import { Link } from 'react-router-dom';
 
 function ListComponent() {
     const [data, setData] = useState([]);
@@ -109,17 +110,19 @@ function ListComponent() {
         {afficheRead
             ? readDonne.length > 0
                 ? readDonne.map((donne, index) => (
-                    <tr key={donne.id_histories} className='text-center border-b'>
-                        <td className='px-4 py-2'>{index + 1}</td>
-                        <td className='px-4 py-2'>
-                            <img src={images} alt="cover" className='object-cover w-10 h-10 mx-auto' />
-                        </td>
-                        <td className='px-4 py-2'>{donne.title || "Titre non disponible"}</td>
-                        <td className='px-4 py-2'>{donne.types || "Genre non disponible"}</td>
-                        <td className='px-4 py-2'>+250 views</td>
-                        <td className='px-4 py-2'>published</td>
-                        <td className='px-4 py-2'>{getDateOnly(donne.created_at)}</td>
-                    </tr>
+                    // <Link to={"/ReadMore/Read/"+donne.id_histories}>
+                    // </Link>
+                        <tr key={donne.id_histories} className='text-center border-b'>
+                            <td className='px-4 py-2'>{index + 1}</td>
+                            <td className='px-4 py-2'>
+                                <img src={images} alt="cover" className='object-cover w-10 h-10 mx-auto' />
+                            </td>
+                            <td className='px-4 py-2'>{donne.title || "Titre non disponible"}</td>
+                            <td className='px-4 py-2'>{donne.types || "Genre non disponible"}</td>
+                            <td className='px-4 py-2'>+250 views</td>
+                            <td className='px-4 py-2'>published</td>
+                            <td className='px-4 py-2'>{getDateOnly(donne.created_at)}</td>
+                        </tr>
                 ))
                 : <tr><td colSpan="7" className='px-4 py-2 text-center'>Aucune donnée à afficher</td></tr>
             : listenDonne.length > 0
