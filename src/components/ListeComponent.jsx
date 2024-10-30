@@ -32,11 +32,13 @@ function ListComponent() {
     }
 
     const fetchData = async () => {
-        const url = import.meta.env.VITE_API_URL + "/Histories/Read";
+        const url = import.meta.env.VITE_API_URL + "/Histories/get/" + localStorage.getItem("id_user");
+        console.log(url);
+        
         try {
             const response = await axios.get(url);
             if (response.data.status === "success") {
-                setData(response.data.results[0]);
+                setData(response.data.results);
             }
         } catch (error) {
             console.error("Erreur lors de la requête:", error);
@@ -124,7 +126,7 @@ function ListComponent() {
                             <td className='px-4 py-2'>{getDateOnly(donne.created_at)}</td>
                         </tr>
                 ))
-                : <tr><td colSpan="7" className='px-4 py-2 text-center'>Aucune donnée à afficher</td></tr>
+                : <tr><td colSpan="7" className='px-4 py-2 text-center'>vous ne publiez pas des Story Texte , Esssayez</td></tr>
             : listenDonne.length > 0
                 ? listenDonne.map((donne, index) => (
                     <tr key={donne.id_histories} className='text-center border-b'>
@@ -139,7 +141,7 @@ function ListComponent() {
                         <td className='px-4 py-2'>{getDateOnly(donne.created_at)}</td>
                     </tr>
                 ))
-                : <tr><td colSpan="7" className='px-4 py-2 text-center'>Aucune donnée à afficher</td></tr>
+                : <tr><td colSpan="7" className='px-4 py-2 text-center'>vous ne publiez pas des Story audio , Esssayez</td></tr>
         }
     </tbody>
 </table>

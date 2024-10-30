@@ -21,7 +21,7 @@ export function Signup() {
       const response = await axios.post(url, values);
       console.log(response)
       if(response.status == 200){
-        navigate("/Browse")
+        navigate("/login")
       }
       setMessage("Compte créé avec succès !");
     } catch (error) {

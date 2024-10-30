@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { FaBars, FaUser, FaTimes, FaBell, FaHome, FaLayerGroup, FaTasks, FaBook } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { FiLogOut } from 'react-icons/fi';
+import { Link, useNavigate } from 'react-router-dom';
+
 
 function Navbar() {
 
@@ -9,9 +11,14 @@ function Navbar() {
   function OpenUserAction(){
     setClickUser(!ClickUser);    
   }
-  
+  const navigate = useNavigate()
   const ToogleClick = () => {
     Setouvrir(!ouvrir);
+  };
+  const _logout= () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("id_user");
+    navigate("/login")
   };
 
   return (
@@ -48,8 +55,10 @@ function Navbar() {
 
             <div className="justify-around w-[10vw] flex">
               <div className='relative'>
+                <Link to={"/profile"}>
                 <button onClick={OpenUserAction} className="p-2 rounded-[50%] border-[2px] border-black"><FaUser /></button>
-                {
+                </Link>
+                {/* {
                 ClickUser && 
                 <div className='-left-32 justify-center flex items-center  bg-white absolute'>
                   <ul className='w-[12vw] p-2 leading-10'>
@@ -62,10 +71,10 @@ function Navbar() {
                   </ul>
                   
                 </div>
-                }
+                } */}
               </div>
               <div>
-                <button className="p-2 rounded-[50%] border-[2px] border-black"><FaBell /></button>
+                <button onClick={_logout} className="p-2 rounded-[50%] border-[2px] border-black"><FiLogOut /></button>
               </div>
             </div>
           </div>
