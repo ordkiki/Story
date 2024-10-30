@@ -34,18 +34,17 @@ function Readcomponent(props) {
 
   return (
         <div>
-          <PathRead path={title} />
+          <PathRead path={title} title={data.title} />
           <div className="mx-40 h-[23vh] rounded-[10px] flex items-center justify-center bg-slate-100">
           </div>
           <ReadUser
-            // titre={title}
             titre = {data.title}
-            genre="Horreur" 
-            nameuser="Rolland"
-            date="feb 22, 2024"
+            genre= {data.genre} 
+            nameuser={data.uwner || "Anonyme"} 
+            date={data.created_at}
           />
           <Fichiertext
-            text={description || "Aucune description disponible."}
+            text={data.content || "Aucune description disponible."}
           />
         </div>
       );

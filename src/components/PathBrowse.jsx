@@ -29,7 +29,7 @@ export function PathCollection(props) {
 }
 
 
-export function PathRead() {
+export function PathRead(props) {
   const location = useLocation(); 
   const { title } = location.state || {};
 
@@ -40,7 +40,7 @@ export function PathRead() {
             <FaAngleRight/> 
             <Link to="/ReadMore" className='transition-all hover:scale-[1.1]'>Read</Link> 
             <FaAngleRight/> 
-            {title || "Titre non disponible"} 
+            {props.title || "Titre non disponible"} 
         </h1>
     </div>
   )
