@@ -31,7 +31,7 @@ function ListComponent() {
     }
 
     const fetchData = async () => {
-        const url = import.meta.env.VITE_API_URL + "/Read";
+        const url = import.meta.env.VITE_API_URL + "/Histories/Read";
         try {
             const response = await axios.get(url);
             if (response.data.status === "success") {

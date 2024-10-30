@@ -13,13 +13,17 @@ import Profile from './views/Profile'
 import CreateRead from './views/CreateRead'
 import CreateListen from './views/CreateListen'
 import Read from './views/Read'
+import Login from './views/login'
+import Register from './views/register'
 function App() {
  
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/ReadMore/Read/:title" element={<Read/>} />
+        <Route path="/ReadMore/Read/:id" element={<Read/>} />
         <Route index path='/' element={<Browse></Browse>}/>
+        <Route index path='/login' element={<Login/>}/>
+        <Route index path='/register' element={<Register/>}/>
         <Route index path='/Manage' element={<Manage/>}/>
         <Route index path='/Browse' element={<Browse/>}/>
         <Route index path='/Favoris' element={<Favoris/>}/>
