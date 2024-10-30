@@ -6,8 +6,8 @@ export function CardRead(props) {
   const navigate = useNavigate(); 
   function changerPage(event) {
     event.preventDefault(); 
-    const chemin = `/ReadMore/Read/${encodeURIComponent(props.title)}`; 
-    console.log(`Page changée dans le composant parent pour le titre: ${props.title}`);
+    const chemin = `/ReadMore/Read/${encodeURIComponent(props.id)}`; 
+    console.log(`Page changée dans le composant parent pour le titre: ${props.id}`);
     navigate(chemin, { state: { title: props.title, description: props.description } });
   }
 
