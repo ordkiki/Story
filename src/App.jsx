@@ -3,7 +3,7 @@ import {BrowserRouter,Route, Routes} from "react-router-dom"
 import './App.css'
 import "./index.css"
 import Manage from './views/Manage'
-
+import { Login, Signup } from './views/Connecting'
 import Browse from './views/Browse'
 import Favoris from './views/Favoris'
 import Collection from './views/Collection'
@@ -29,6 +29,8 @@ function App() {
         <Route index path='/Profile' element={<Profile/>}/>
         <Route index path='/Collection/Create_Read' element={<CreateRead/>}/>
         <Route index path='/Collection/Create_Listen' element={<CreateListen/>}/>
+        <Route index path='/Login' element={<Login/>}/>
+        <Route index path='/SignUp' element={<Signup/>}/>
       </Routes>
     </BrowserRouter>)
 }

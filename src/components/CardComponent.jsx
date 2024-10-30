@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaBookmark } from 'react-icons/fa';
+import { FaBookmark, FaPlay } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
 export function CardRead(props) {

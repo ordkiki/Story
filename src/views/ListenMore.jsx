@@ -21,7 +21,7 @@ export default function ReadMore() {
     }
   };
 
-  useEffect(() => {
+  useEffect(() => {   
     fetchData();
   }, []);
 
