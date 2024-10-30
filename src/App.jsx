@@ -18,7 +18,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/ReadMore/Read/:title" element={<Read/>} />
+        <Route path="/ReadMore/Read/:id" element={<Read/>} />
         <Route index path='/' element={<Browse></Browse>}/>
         <Route index path='/Manage' element={<Manage/>}/>
         <Route index path='/Browse' element={<Browse/>}/>

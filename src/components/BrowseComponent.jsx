@@ -10,7 +10,7 @@ export function Listen() {
   
 
   const fetchData = async () => {
-    const url = import.meta.env.VITE_API_URL + "/Read"
+    const url = import.meta.env.VITE_API_URL + "/Histories/Read"
     try {
       const response = await axios.get(url);
       if (response.data.status === "success") {
@@ -57,7 +57,7 @@ export function Read() {
   const [donneesFiltres, setDonneesFiltres] = useState([]);
 
   const fetchData = async () => {
-    const url = import.meta.env.VITE_API_URL + "/Read"
+    const url = import.meta.env.VITE_API_URL + "/Histories/Read"
     try {
       const response = await axios.get(url);
       if (response.data.status === "success") {
@@ -86,10 +86,9 @@ export function Read() {
         </Link>
       </div>
       <div className='flex flex-wrap p-2 card-vakiana'>
-        {/* aza averine tsony ilAY SLICE */}
         {donneesFiltres.length > 0 ? (
           donneesFiltres.map((donne) => (
-            <CardRead key={donne.id_histories} title={donne.title || "Titre non disponible"} description={donne.content || "Description non disponible"} />
+            <CardRead key={donne.id_histories} id={donne.id_histories} title={donne.title || "Titre non disponible"} description={donne.content || "Description non disponible"} />
           ))
         ) : (
           <p>Aucune donnée à afficher.</p>
