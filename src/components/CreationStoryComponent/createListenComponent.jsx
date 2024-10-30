@@ -17,7 +17,7 @@ function CreateListenComponent(props) {
     
       const EnvoyerRequete = async (e) => {
         e.preventDefault();
-        // if((values.content != null || values.image != null) || values.description == null || values.gender == null || values.title){
+        // if(values.content == null || values.description == null || values.gender == null || values.title){
         //     return console.error("Donnes non complet");
         // }else{
 
