@@ -35,7 +35,7 @@ export function Signup() {
       <form onSubmit={handleRegister} className="p-4 max-w-sm mx-auto border">
         <div className="mb-5">
           <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900">
-            Votre adresse nom
+            Votre nom
           </label>
           <input
             name='username'
