@@ -25,9 +25,8 @@ function App() {
         <Route index path="/Manage" element={<ProtectedRoute element={<Manage />} />} />
         <Route index path="/Browse" element={<Browse />} />
         <Route index path="/Favoris" element={<ProtectedRoute element={<Favoris />} />} />
-        <Route  path="/Collection" element={<Collection />} />
-
-        {/* <Route index path="/Collection" element={<ProtectedRoute element={<Collection />} />} /> */}
+        {/* <Route  path="/Collection" element={<Collection />} /> */}
+        <Route index path="/Collection" element={<ProtectedRoute element={<Collection />} />} />
         <Route index path="/ReadMore" element={<ReadMore />} />
         <Route index path="/ListenMore" element={<ListenMore />} />
         <Route index path="/Profile" element={<ProtectedRoute element={<Profile />} />} />
