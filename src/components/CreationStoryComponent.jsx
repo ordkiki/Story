@@ -8,7 +8,7 @@ export function PopUp({ onClose }) {
     const [routerPath, setRouterPath] = useState("");
     function ChoisirAudio() {
         setLikeAudio(true);
-        setRouterPath("Create_Listen");
+        setRouterPath("/Collection/Create_Listen");
         path
         setLire(false);
     }
@@ -16,7 +16,7 @@ export function PopUp({ onClose }) {
     function ChoisirLire() {
         setLire(true);
         setLikeAudio(false);
-        setRouterPath("Create_Read");
+        setRouterPath("/Collection/Create_Read");
     }
 
     return (
@@ -53,7 +53,7 @@ export function PopUp({ onClose }) {
 
                     <div className='flex items-center justify-center my-10'>
                         <button className='hover:bg-black px-10 rounded-[20px] hover:text-white transition-all text-center p-2 border-[3px] border-black'>
-                            <Link to={`/Collection/${routerPath}`} className='flex items-center'>
+                            <Link to={`${routerPath}`} className='flex items-center'>
                                 Next <FaAngleRight />
                             </Link>
                         </button>
