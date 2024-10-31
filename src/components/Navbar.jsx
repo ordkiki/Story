@@ -87,29 +87,34 @@ function Navbar() {
   );
 }
 
-export function Sidebar({ ouvrir, ToogleClick }) {
-
+export function Sidebar({ ouvrir, toggleClick }) {
   return (
     <div
-      className={`z-10 absolute top-[65px] left-0 h-[100vh] w-[11vw] bg-white p-4 transform ${
+      className={`fixed top-30 left-0 h-full lg:w-[10vw] w-[100vw] bg-white p-4 shadow-lg transform ${
         ouvrir ? 'translate-x-0' : '-translate-x-full'
-      } transition-transform duration-300 ease-in-out`}
+      } transition-transform duration-300`}
     >
-      <ul className="py-4 w-[11vw] leading-10">
-        <li className="hover:bg-black hover:text-white transition-all text-[14px] rounded w-[9vw] px-2">
-          <Link to="/Browse" className="flex items-center"><FaHome className='mx-3'/> Browse</Link>
+
+      <ul className="space-y-4">
+        <li>
+          <Link to="/Browse" className="flex items-center text-lg hover:bg-black hover:text-white p-2 rounded">
+            <FaHome className="mr-3" /> Browse
+          </Link>
         </li>
-        <li className="hover:bg-black hover:text-white transition-all w-[9vw] rounded px-2 text-[14px]">
-          <Link to="/Collection" className="flex items-center "><FaLayerGroup className='mx-3'/> Collection</Link>
+        <li>
+          <Link to="/Collection" className="flex items-center text-lg hover:bg-black hover:text-white p-2 rounded">
+            <FaLayerGroup className="mr-3" /> Collection
+          </Link>
         </li>
-        <li className="hover:bg-black hover:text-white transition-all w-[9vw] rounded px-2 text-[14px]">
-          <Link to="/Manage" className="flex items-center "><FaTasks className='mx-3'/> Manage</Link>
+        <li>
+          <Link to="/Manage" className="flex items-center text-lg hover:bg-black hover:text-white p-2 rounded">
+            <FaTasks className="mr-3" /> Manage
+          </Link>
         </li>
       </ul>
     </div>
   );
 }
-
 
 export function PopUserIcon(){
   return(
