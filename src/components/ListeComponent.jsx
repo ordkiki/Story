@@ -4,6 +4,7 @@ import images from "../assets/image/LOGO.png";
 import axios from "axios";
 import { PopUp } from './CreationStoryComponent.jsx';
 import { Link } from 'react-router-dom';
+import getDateOnly from '../fonctionality/formateddate.jsx';
 
 function ListComponent() {
     const [data, setData] = useState([]);
@@ -43,16 +44,6 @@ function ListComponent() {
         } catch (error) {
             console.error("Erreur lors de la requête:", error);
         }
-    };
-
-    const getDateOnly = (dateString) => {
-        const date = new Date(dateString);
-        const options = {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-        };
-        return date.toLocaleDateString('fr-FR', options);
     };
 
     useEffect(() => {
