@@ -6,6 +6,7 @@ function CreateReadComponent() {
     titre: "",
     genre: "",
     content: "",
+    file_img: null,
   });
 
   function Creer(e) {
@@ -14,8 +15,12 @@ function CreateReadComponent() {
   }
 
   function handleChange(e) {
-    const { name, value } = e.target;
-    setStoryData({ ...storyData, [name]: value });
+    const { name, value, type, files } = e.target;
+    if (type === "file") {
+      setStoryData({ ...storyData, [name]: files[0] });
+    } else {
+      setStoryData({ ...storyData, [name]: value });
+    }
   }
 
   return (
@@ -26,24 +31,28 @@ function CreateReadComponent() {
           <h4 className="mb-4 text-2xl font-bold text-gray-800 md:text-3xl md:mb-0">
             Create Written Component
           </h4>
-          <button className="px-5 py-2 text-white transition duration-300 bg-black rounded-md hover:bg-gray-800">
+          <button
+            type="button"
+            className="px-5 py-2 text-white transition duration-300 bg-black rounded-md hover:bg-gray-800"
+          >
             Save
           </button>
         </div>
-        
+
         <form onSubmit={Creer} className="space-y-5" encType="multipart/form-data">
           <div>
-            <label className="block mb-2 text-sm font-medium text-gray-700">Import your image :</label>
+            <label className="block mb-2 text-sm font-medium text-gray-700">Import your image:</label>
             <input
               onChange={handleChange}
               className="block w-full h-32 p-2 bg-gray-100 border-2 border-gray-400 border-dashed rounded md:h-40 focus:border-blue-500 focus:outline-none"
               type="file"
               name="file_img"
+              accept="image/*"
             />
           </div>
 
           <div>
-            <label className="block mb-2 text-sm font-medium text-gray-700">Title :</label>
+            <label className="block mb-2 text-sm font-medium text-gray-700">Title:</label>
             <input
               onChange={handleChange}
               type="text"
@@ -54,7 +63,7 @@ function CreateReadComponent() {
           </div>
 
           <div>
-            <label className="block mb-2 text-sm font-medium text-gray-700">Genre :</label>
+            <label className="block mb-2 text-sm font-medium text-gray-700">Genre:</label>
             <input
               onChange={handleChange}
               type="text"
@@ -65,7 +74,7 @@ function CreateReadComponent() {
           </div>
 
           <div>
-            <label className="block mb-2 text-sm font-medium text-gray-700">Text :</label>
+            <label className="block mb-2 text-sm font-medium text-gray-700">Text:</label>
             <textarea
               onChange={handleChange}
               placeholder="Your text"
@@ -78,7 +87,7 @@ function CreateReadComponent() {
             <input
               type="submit"
               value="Publish"
-              className="w-full p-3 border-black border-[2px] hover:text-white rounded-md font-medium hover:bg-black transition duration-300 cursor-pointer"
+              className="w-full p-3 border-2 border-black rounded-md font-medium hover:bg-black hover:text-white transition duration-300 cursor-pointer"
             />
           </div>
         </form>
