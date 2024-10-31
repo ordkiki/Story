@@ -41,7 +41,7 @@ export function Listen() {
       <div className='flex flex-wrap justify-between p-4 card-vakiana'>
         {/* aza averina eto tsony ilay slice */}
         {donneesFiltres.length > 0 ? (
-          donneesFiltres.map((donne) => (
+          donneesFiltres.slice(0,4).map((donne) => (
             <CardListen key={donne.id_histories} title={donne.title || "Titre non disponible"} description={donne.content || "Description non disponible"} />
           ))
         ) : (
@@ -87,7 +87,7 @@ export function Read() {
       </div>
       <div className='flex flex-wrap p-2 card-vakiana'>
         {donneesFiltres.length > 0 ? (
-          donneesFiltres.map((donne) => (
+          donneesFiltres.slice(0,4).map((donne) => (
             <CardRead key={donne.id_histories} id={donne.id_histories} title={donne.title || "Titre non disponible"} description={donne.content || "Description non disponible"} />
           ))
         ) : (

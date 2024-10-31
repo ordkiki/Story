@@ -21,7 +21,7 @@ export function Signup() {
       const response = await axios.post(url, values);
       console.log(response)
       if(response.status == 200){
-        navigate("/Browse")
+        navigate("/login")
       }
       setMessage("Compte créé avec succès !");
     } catch (error) {
@@ -129,6 +129,7 @@ export function Login() {
   });
   const [message, setMessage] = useState(""); 
   const navigate = useNavigate()
+  
   axios.defaults.withCredentials = true;
 
   const EnvoyerRequete = async (e) => {
@@ -137,6 +138,11 @@ export function Login() {
     try {
       const response = await axios.post(url, values);
       if(response.status == 200){
+        localStorage.setItem("token" ,response.data.token)
+        localStorage.setItem("id_user",response.data.user.id_user)
+        console.log(response.data.token)
+        console.log(response.data.user.id_user);
+        
         navigate("/Browse")
       }
       setMessage("Connexion réussie !");

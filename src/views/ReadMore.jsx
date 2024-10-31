@@ -11,7 +11,7 @@ export default function ReadMore() {
   const [donneesFiltres, setDonneesFiltres] = useState([]);
 
   const fetchData = async () => {
-    const url = import.meta.env.VITE_API_URL + "/Read"
+    const url = import.meta.env.VITE_API_URL + "/Histories/Read"
     try {
       const response = await axios.get(url);
       if (response.data.status === "success") {
@@ -55,7 +55,7 @@ export default function ReadMore() {
       <div className='flex flex-wrap mx-40 p-4 w-[85vw]'>
         {donneesFiltres.length > 0 ? (
           donneesFiltres.map((donne) => (
-            <CardRead key={donne.id_histories} title={donne.title || "Titre non disponible"} description={donne.content || "Description non disponible"} />
+            <CardRead key={donne.id_histories} id={donne.id_histories} title={donne.title || "Titre non disponible"} description={donne.content || "Description non disponible"} />
           ))
         ) : (
           <p>Aucune donnée à afficher.</p>

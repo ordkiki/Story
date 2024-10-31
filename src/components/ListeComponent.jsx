@@ -3,6 +3,8 @@ import List from './listModel.jsx';
 import images from "../assets/image/LOGO.png";
 import axios from "axios";
 import { PopUp } from './CreationStoryComponent.jsx';
+import { Link } from 'react-router-dom';
+import getDateOnly from '../fonctionality/formateddate.jsx';
 
 function ListComponent() {
     const [data, setData] = useState([]);
@@ -31,25 +33,17 @@ function ListComponent() {
     }
 
     const fetchData = async () => {
-        const url = import.meta.env.VITE_API_URL + "/Histories/Read";
+        const url = import.meta.env.VITE_API_URL + "/Histories/get/" + localStorage.getItem("id_user");
+        console.log(url);
+        
         try {
             const response = await axios.get(url);
             if (response.data.status === "success") {
-                setData(response.data.results[0]);
+                setData(response.data.results);
             }
         } catch (error) {
             console.error("Erreur lors de la requête:", error);
         }
-    };
-
-    const getDateOnly = (dateString) => {
-        const date = new Date(dateString);
-        const options = {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-        };
-        return date.toLocaleDateString('fr-FR', options);
     };
 
     useEffect(() => {
@@ -109,19 +103,21 @@ function ListComponent() {
         {afficheRead
             ? readDonne.length > 0
                 ? readDonne.map((donne, index) => (
-                    <tr key={donne.id_histories} className='text-center border-b'>
-                        <td className='px-4 py-2'>{index + 1}</td>
-                        <td className='px-4 py-2'>
-                            <img src={images} alt="cover" className='object-cover w-10 h-10 mx-auto' />
-                        </td>
-                        <td className='px-4 py-2'>{donne.title || "Titre non disponible"}</td>
-                        <td className='px-4 py-2'>{donne.types || "Genre non disponible"}</td>
-                        <td className='px-4 py-2'>+250 views</td>
-                        <td className='px-4 py-2'>published</td>
-                        <td className='px-4 py-2'>{getDateOnly(donne.created_at)}</td>
-                    </tr>
+                    // <Link to={"/ReadMore/Read/"+donne.id_histories}>
+                    // </Link>
+                        <tr key={donne.id_histories} className='text-center border-b'>
+                            <td className='px-4 py-2'>{index + 1}</td>
+                            <td className='px-4 py-2'>
+                                <img src={images} alt="cover" className='object-cover w-10 h-10 mx-auto' />
+                            </td>
+                            <td className='px-4 py-2'>{donne.title || "Titre non disponible"}</td>
+                            <td className='px-4 py-2'>{donne.types || "Genre non disponible"}</td>
+                            <td className='px-4 py-2'>+250 views</td>
+                            <td className='px-4 py-2'>published</td>
+                            <td className='px-4 py-2'>{getDateOnly(donne.created_at)}</td>
+                        </tr>
                 ))
-                : <tr><td colSpan="7" className='px-4 py-2 text-center'>Aucune donnée à afficher</td></tr>
+                : <tr><td colSpan="7" className='px-4 py-2 text-center'>vous ne publiez pas des Story Texte , Esssayez</td></tr>
             : listenDonne.length > 0
                 ? listenDonne.map((donne, index) => (
                     <tr key={donne.id_histories} className='text-center border-b'>
@@ -136,7 +132,7 @@ function ListComponent() {
                         <td className='px-4 py-2'>{getDateOnly(donne.created_at)}</td>
                     </tr>
                 ))
-                : <tr><td colSpan="7" className='px-4 py-2 text-center'>Aucune donnée à afficher</td></tr>
+                : <tr><td colSpan="7" className='px-4 py-2 text-center'>vous ne publiez pas des Story audio , Esssayez</td></tr>
         }
     </tbody>
 </table>

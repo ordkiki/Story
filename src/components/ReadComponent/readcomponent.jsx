@@ -9,20 +9,34 @@ function Readcomponent(props) {
   const location = useLocation();
   const { title, description } = location.state || {};
   const [data, setData] = useState({});
+  const [user ,setUser] = useState();
 
   axios.defaults.withCredentials = true;
 
+  const fechUser = async (id) => {
+    const url = import.meta.env.VITE_API_URL + "/user/get_info/" + id;
+    console.log(id)
+    try {
+      const response = await axios.get(url);
+      const resultData = response.data.username; 
+      setUser(resultData);
+    } catch (error) {
+      console.error("Error fetching user:", error);
+    }
+  }
   const fetchData = async () => {
     const url = import.meta.env.VITE_API_URL + "/Histories/ReadOne/" + props.id;
     console.log("Fetching from URL:", url);
     try {
       const response = await axios.get(url);
       const resultData = response.data.results[0]; 
+      fechUser(resultData.owner)
       setData(resultData);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   };
+
 
   useEffect(() => {
     fetchData();
@@ -40,7 +54,7 @@ function Readcomponent(props) {
           <ReadUser
             titre = {data.title}
             genre= {data.genre} 
-            nameuser={data.uwner || "Anonyme"} 
+            nameuser={user || "Anonyme"} 
             date={data.created_at}
           />
           <Fichiertext

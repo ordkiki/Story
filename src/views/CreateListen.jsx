@@ -5,7 +5,7 @@ function CreateListen() {
   return (
     <div>
         <Navbar></Navbar>
-        <CreateListenComponent/>
+        <CreateListenComponent isRead={false} />
     </div>
   )
 }
