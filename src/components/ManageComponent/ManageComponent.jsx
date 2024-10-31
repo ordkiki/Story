@@ -6,16 +6,15 @@ import { PopUp } from '../CreationStoryComponent.jsx';
 import { Link } from 'react-router-dom';
 import getDateOnly from '../../fonctionality/formateddate.jsx';
 import List from '../listModel.jsx';
-import { FaRemoveFormat } from 'react-icons/fa';
-
+import { BsThreeDotsVertical } from 'react-icons/bs';
 function ManageComponent() {
     const [data, setData] = useState([]);
+    const [openDropdown, setopenDropdown] = useState(false);
+
     const [readDonne, setreadDonne] = useState([]);
     const [listenDonne, setlistenDonne] = useState([]);
     const [afficheUser, setAfficheUser] = useState(true);
     const [afficheListen, setAfficheListen] = useState(false);
-    const [isPopupVisible, setIsPopupVisible] = useState(false);
-
     function ListeUser() {
         setAfficheUser(true);
         setAfficheListen(false);
@@ -26,8 +25,8 @@ function ManageComponent() {
         setAfficheListen(true);
     }
 
-    function openPopup() {
-        setIsPopupVisible(true);
+    function Toggle() {
+        setopenDropdown(!openDropdown);
     }
 
     function closePopup() {
@@ -62,7 +61,7 @@ function ManageComponent() {
     return (
         <div className='flex'>
 
-            <div className=' items-center p-4 mx-36'>
+            <div className=' items-center p-4 ml-36'>
                 <div>
                     <button
                         onClick={ListeUser}
@@ -80,11 +79,38 @@ function ManageComponent() {
                 </div>
             </div>
 
-            <div className='p-4 h-[60vh] w-[60vw] overflow-y-scroll border-black border-l-[2px]'>
-                <form action="" method="post">
+            <div className='p-4 w-[60vw]  border-black border-l-[2px]'>
+                <form action="" method="post" className='flex items-center'>
+                    <div>
+                        <input 
+                            type="search" 
+                            name="search" 
+                            className='border p-2 bg-gray-100 rounded'
+                            placeholder='search' id="search" />
+                    </div>
+
+                    <div className=''>
+                        <button onClick={Toggle} id="dropdownDefaultButton" data-dropdown-toggle="dropdown" className="my-4  bg-white hover:bg-gray-400 focus:ring-4 focus:outline-none focus:ring-black font-medium rounded-lg text-sm px-5 py-2.5  text-center inline-flex items-center  " type="button">All <svg className="w-2.5 h-2.5 ms-3 outline-none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4"/>
+                        </svg>
+                        </button>
+                        {openDropdown &&
+                            <div id="dropdown" className="relative   bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                            <ul className="absolute py-2 left-4 text-sm border bg-white z-10 text-gray-700" aria-labelledby="dropdownDefaultButton">
+                            <li>
+                                <button href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Active</button>
+                              </li>
+
+                              <li>
+                                <button href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Date</button>
+                              </li>
+                            </ul>
+                            </div>         
+                    }    
+                    </div>
 
                 </form>
-                        {afficheUser &&
+                {afficheUser &&
                             <table className='min-w-full bg-white rounded shadow-sm '>
                                 <thead>
                                     <tr className='text-center border-b'>
@@ -98,13 +124,15 @@ function ManageComponent() {
                         
 
                                 <tbody className=''>
-                                
+
                                    <tr  className='text-center border-b'>
                                        <td className='px-4 py-2'>#</td>
                                        <td className='px-4 py-2'>Username</td>
                                        <td className='px-4 py-2'>email</td>
-                                       <td className='px-4 py-2'>mot de passe</td>
+                                       <td className='px-4 py-2'>Status</td>
                                        <td className='px-4 py-2'>creer en 12juillet</td>
+                                       <td className='px-4 py-2'><BsThreeDotsVertical></BsThreeDotsVertical></td>
+
                                    </tr>      
 
 
@@ -123,19 +151,107 @@ function ManageComponent() {
                                         <th className='px-4 py-2'>create date</th>
                                     </tr>
                                 </thead>
-                        
 
                                 <tbody className=''>
-                                
+                                <tr  className='text-center border-b'>
+                                       <td className='px-4 py-2'>#</td>
+                                       <td className='px-4 py-2'>titre</td>
+                                       <td className='px-4 py-2'>Jhone Doe</td>
+                                       <td className='px-4 py-2'>pending</td>
+                                       <td className='px-4 py-2'>creer en 12juillet</td>
+                                       <td className='px-4 py-2'><BsThreeDotsVertical></BsThreeDotsVertical></td>
+
+                                   </tr>      
                                    <tr  className='text-center border-b'>
                                        <td className='px-4 py-2'>#</td>
                                        <td className='px-4 py-2'>titre</td>
                                        <td className='px-4 py-2'>Jhone Doe</td>
                                        <td className='px-4 py-2'>pending</td>
                                        <td className='px-4 py-2'>creer en 12juillet</td>
-                                       <td className='px-4 py-2'><FaRemoveFormat></FaRemoveFormat></td>
+                                       <td className='px-4 py-2'><BsThreeDotsVertical></BsThreeDotsVertical></td>
+
+                                   </tr>                                         <tr  className='text-center border-b'>
+                                       <td className='px-4 py-2'>#</td>
+                                       <td className='px-4 py-2'>titre</td>
+                                       <td className='px-4 py-2'>Jhone Doe</td>
+                                       <td className='px-4 py-2'>pending</td>
+                                       <td className='px-4 py-2'>creer en 12juillet</td>
+                                       <td className='px-4 py-2'><BsThreeDotsVertical></BsThreeDotsVertical></td>
+
+                                   </tr>                                         <tr  className='text-center border-b'>
+                                       <td className='px-4 py-2'>#</td>
+                                       <td className='px-4 py-2'>titre</td>
+                                       <td className='px-4 py-2'>Jhone Doe</td>
+                                       <td className='px-4 py-2'>pending</td>
+                                       <td className='px-4 py-2'>creer en 12juillet</td>
+                                       <td className='px-4 py-2'><BsThreeDotsVertical></BsThreeDotsVertical></td>
+
+                                   </tr>                                         <tr  className='text-center border-b'>
+                                       <td className='px-4 py-2'>#</td>
+                                       <td className='px-4 py-2'>titre</td>
+                                       <td className='px-4 py-2'>Jhone Doe</td>
+                                       <td className='px-4 py-2'>pending</td>
+                                       <td className='px-4 py-2'>creer en 12juillet</td>
+                                       <td className='px-4 py-2'><BsThreeDotsVertical></BsThreeDotsVertical></td>
+
+                                   </tr>                                         <tr  className='text-center border-b'>
+                                       <td className='px-4 py-2'>#</td>
+                                       <td className='px-4 py-2'>titre</td>
+                                       <td className='px-4 py-2'>Jhone Doe</td>
+                                       <td className='px-4 py-2'>pending</td>
+                                       <td className='px-4 py-2'>creer en 12juillet</td>
+                                       <td className='px-4 py-2'><BsThreeDotsVertical></BsThreeDotsVertical></td>
+
+                                   </tr>                                         <tr  className='text-center border-b'>
+                                       <td className='px-4 py-2'>#</td>
+                                       <td className='px-4 py-2'>titre</td>
+                                       <td className='px-4 py-2'>Jhone Doe</td>
+                                       <td className='px-4 py-2'>pending</td>
+                                       <td className='px-4 py-2'>creer en 12juillet</td>
+                                       <td className='px-4 py-2'><BsThreeDotsVertical></BsThreeDotsVertical></td>
+
+                                   </tr>                                         <tr  className='text-center border-b'>
+                                       <td className='px-4 py-2'>#</td>
+                                       <td className='px-4 py-2'>titre</td>
+                                       <td className='px-4 py-2'>Jhone Doe</td>
+                                       <td className='px-4 py-2'>pending</td>
+                                       <td className='px-4 py-2'>creer en 12juillet</td>
+                                       <td className='px-4 py-2'><BsThreeDotsVertical></BsThreeDotsVertical></td>
+
+                                   </tr>                                         <tr  className='text-center border-b'>
+                                       <td className='px-4 py-2'>#</td>
+                                       <td className='px-4 py-2'>titre</td>
+                                       <td className='px-4 py-2'>Jhone Doe</td>
+                                       <td className='px-4 py-2'>pending</td>
+                                       <td className='px-4 py-2'>creer en 12juillet</td>
+                                       <td className='px-4 py-2'><BsThreeDotsVertical></BsThreeDotsVertical></td>
+
+                                   </tr>                                         <tr  className='text-center border-b'>
+                                       <td className='px-4 py-2'>#</td>
+                                       <td className='px-4 py-2'>titre</td>
+                                       <td className='px-4 py-2'>Jhone Doe</td>
+                                       <td className='px-4 py-2'>pending</td>
+                                       <td className='px-4 py-2'>creer en 12juillet</td>
+                                       <td className='px-4 py-2'><BsThreeDotsVertical></BsThreeDotsVertical></td>
+
+                                   </tr>                                         <tr  className='text-center border-b'>
+                                       <td className='px-4 py-2'>#</td>
+                                       <td className='px-4 py-2'>titre</td>
+                                       <td className='px-4 py-2'>Jhone Doe</td>
+                                       <td className='px-4 py-2'>pending</td>
+                                       <td className='px-4 py-2'>creer en 12juillet</td>
+                                       <td className='px-4 py-2'><BsThreeDotsVertical></BsThreeDotsVertical></td>
+
+                                   </tr>                                         <tr  className='text-center border-b'>
+                                       <td className='px-4 py-2'>#</td>
+                                       <td className='px-4 py-2'>titre</td>
+                                       <td className='px-4 py-2'>Jhone Doe</td>
+                                       <td className='px-4 py-2'>pending</td>
+                                       <td className='px-4 py-2'>creer en 12juillet</td>
+                                       <td className='px-4 py-2'><BsThreeDotsVertical></BsThreeDotsVertical></td>
 
                                    </tr>      
+                                
 
 
 

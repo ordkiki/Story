@@ -21,10 +21,11 @@ function App() {
       <Routes>
         <Route path="/ReadMore/Read/:id" element={<ProtectedRoute element={<Read />} />} />
         <Route index path="/" element={<Login />} />
-        <Route path="/Manage" element={<Manage/>}/>
-        {/* <Route index path="/Manage" element={<ProtectedRoute element={<Manage />} />} /> */}
+        {/* <Route path="/Manage" element={<Manage/>}/> */}
+        <Route index path="/Manage" element={<ProtectedRoute element={<Manage />} />} />
         <Route index path="/Browse" element={<Browse />} />
         <Route index path="/Favoris" element={<ProtectedRoute element={<Favoris />} />} />
+        {/* <Route  path="/Collection" element={<Collection />} /> */}
         <Route index path="/Collection" element={<ProtectedRoute element={<Collection />} />} />
         <Route index path="/ReadMore" element={<ReadMore />} />
         <Route index path="/ListenMore" element={<ListenMore />} />
