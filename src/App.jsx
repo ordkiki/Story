@@ -21,7 +21,8 @@ function App() {
       <Routes>
         <Route path="/ReadMore/Read/:id" element={<ProtectedRoute element={<Read />} />} />
         <Route index path="/" element={<Login />} />
-        <Route index path="/Manage" element={<ProtectedRoute element={<Manage />} />} />
+        <Route path="/Manage" element={<Manage/>}/>
+        {/* <Route index path="/Manage" element={<ProtectedRoute element={<Manage />} />} /> */}
         <Route index path="/Browse" element={<Browse />} />
         <Route index path="/Favoris" element={<ProtectedRoute element={<Favoris />} />} />
         <Route index path="/Collection" element={<ProtectedRoute element={<Collection />} />} />
