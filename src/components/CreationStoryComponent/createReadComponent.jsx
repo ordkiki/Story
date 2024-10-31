@@ -21,12 +21,12 @@ function CreateReadComponent() {
   return (
     <div>
       <PathCollection path="Create written Component" />
-      <div className="max-w-3xl mx-auto p-6 md:p-10">
-        <div className="flex flex-col md:flex-row justify-between items-center mb-6">
-          <h4 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4 md:mb-0">
+      <div className="max-w-3xl p-6 mx-auto md:p-10">
+        <div className="flex flex-col items-center justify-between mb-6 md:flex-row">
+          <h4 className="mb-4 text-2xl font-bold text-gray-800 md:text-3xl md:mb-0">
             Create Written Component
           </h4>
-          <button className="bg-black text-white px-5 py-2 rounded-md hover:bg-gray-800 transition duration-300">
+          <button className="px-5 py-2 text-white transition duration-300 bg-black rounded-md hover:bg-gray-800">
             Save
           </button>
         </div>
@@ -36,7 +36,7 @@ function CreateReadComponent() {
             <label className="block mb-2 text-sm font-medium text-gray-700">Import your image :</label>
             <input
               onChange={handleChange}
-              className="block w-full h-32 md:h-40 bg-gray-100 p-2 rounded border-2 border-dashed border-gray-400 focus:border-blue-500 focus:outline-none"
+              className="block w-full h-32 p-2 bg-gray-100 border-2 border-gray-400 border-dashed rounded md:h-40 focus:border-blue-500 focus:outline-none"
               type="file"
               name="file_img"
             />
@@ -49,7 +49,7 @@ function CreateReadComponent() {
               type="text"
               placeholder="Title"
               name="titre"
-              className="block w-full p-3 rounded border border-gray-300 focus:border-blue-500 focus:outline-none"
+              className="block w-full p-3 border border-gray-300 rounded focus:border-blue-500 focus:outline-none"
             />
           </div>
 
@@ -60,7 +60,7 @@ function CreateReadComponent() {
               type="text"
               placeholder="Genre"
               name="genre"
-              className="block w-full p-3 rounded border border-gray-300 focus:border-blue-500 focus:outline-none"
+              className="block w-full p-3 border border-gray-300 rounded focus:border-blue-500 focus:outline-none"
             />
           </div>
 
@@ -70,7 +70,7 @@ function CreateReadComponent() {
               onChange={handleChange}
               placeholder="Your text"
               name="content"
-              className="block w-full p-3 rounded border border-gray-300 focus:border-blue-500 focus:outline-none"
+              className="block w-full p-3 border border-gray-300 rounded focus:border-blue-500 focus:outline-none"
             />
           </div>
 

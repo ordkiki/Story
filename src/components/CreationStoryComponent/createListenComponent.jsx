@@ -36,12 +36,12 @@ function CreateListenComponent(props) {
     return (
         <div>
             <PathCollection path="Create written Component" />
-            <div className='mx-52 p-10'>
+            <div className='p-10 mx-52'>
                 <div className='flex justify-between'>
                     <h4 className='text-3xl font-bold'>
                         Create written component
                     </h4>
-                    <button className='bg-black px-3 font-medium text-white' onClick={EnvoyerRequete}>
+                    <button className='px-3 font-medium text-white bg-black' onClick={EnvoyerRequete}>
                         Save
                     </button>
                 </div>
@@ -68,20 +68,20 @@ function CreateListenComponent(props) {
                         </tr>
                         <tr>
                             <td>
-                                <input type="genre" placeholder='genre' name='genre' className="my-2 border w-[71vw] p-2" onChange={(e) => setValues({...values , gender : e.target.value})}/>
+                                <input type="genre" placeholder='gender' name='genre' className="my-2 border w-[71vw] p-2" onChange={(e) => setValues({...values , gender : e.target.value})}/>
                             </td>
                         </tr>
 
                         <tr>
                             <td>
-                                <input type="text" placeholder='votre description' name='text' className="my-2 border w-[71vw] p-2" onChange={(e) => setValues({...values , description : e.target.value})}/>
+                                <input type="text" placeholder='your description' name='text' className="my-2 border w-[71vw] p-2" onChange={(e) => setValues({...values , description : e.target.value})}/>
                             </td>
                         </tr>
                         <tr>
                         {
                             props.isRead?
                                     <td>
-                                        <input type="text" placeholder='votre text' name='text' className="my-2 border w-[71vw] p-2" onChange={(e) => {setValues({...values ,  content: e.target.value})}}/>
+                                        <textarea type="text" placeholder='your content' name='text' className="my-2 h-56 border w-[71vw] p-2" onChange={(e) => {setValues({...values ,  content: e.target.value})}}/>
                                     </td> 
                                 :<td></td>
                         }
