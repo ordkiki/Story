@@ -17,16 +17,20 @@ export function Signup() {
   const handleRegister = async (e) => {
     e.preventDefault();
     const url = import.meta.env.VITE_API_URL + "/user/add";
-    try {
-      const response = await axios.post(url, values);
-      console.log(response)
-      if(response.status == 200){
-        navigate("/login")
+    if (values.confirm_password_user == values.password_user) {
+      try {
+        const response = await axios.post(url, values);
+        console.log(response)
+        if(response.status == 200){
+          navigate("/login")
+        }
+        setMessage("Compte créé avec succès !");
+      } catch (error) {
+        setMessage("Erreur lors de l'inscription. Veuillez réessayer.");
+        console.error('Error:', error);
       }
-      setMessage("Compte créé avec succès !");
-    } catch (error) {
-      setMessage("Erreur lors de l'inscription. Veuillez réessayer.");
-      console.error('Error:', error);
+    } else {
+        setMessage("Veuillez verifier votre mot de passe")
     }
   };
 

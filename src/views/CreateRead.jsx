@@ -1,12 +1,12 @@
 import React from 'react'
-import CreateListenComponent from '../components/CreationStoryComponent/createListenComponent'
 import Navbar from '../components/Navbar'
+import CreateReadComponent from '../components/CreationStoryComponent/createReadComponent'
 
 function CreateRead() {
   return (
     <div>
         <Navbar></Navbar>
-        <CreateListenComponent isRead={true} />
+        <CreateReadComponent/>
     </div>
   )
 }

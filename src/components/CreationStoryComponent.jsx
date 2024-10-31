@@ -22,7 +22,6 @@ export function PopUp({ onClose }) {
     return (
         <div className='top-0 bg-[rgba(0,0,0,0.2)] w-screen h-full flex items-center justify-center absolute'>
             <div className='relative p-10 w-max h-max bg-white border rounded-[20px]'>
-                {/* <h3 className='text-xl font-medium'>Create history</h3> */}
                 <button onClick={onClose} className='absolute right-10 top-10'><FaTimes /></button>
                 <div className='flex flex-col gap-4'>
                     <h2 className='text-2xl font-bold text-center'>Show Us your creativity</h2>
